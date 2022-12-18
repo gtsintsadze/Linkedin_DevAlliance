@@ -1,0 +1,13 @@
+<?php
+/** @var Tsintsadze\Linkedin\Block\Linkedin $block */
+/** @var  Tsintsadze\Linkedin\Setup\Patch\Data\AddLinkedin $patch */
+?>
+
+<?php if ($block->getLinkedinConfigValue() !== 'invisible') : ?>
+    <div class="field" <?= $block->getLinkedinConfigValue()  === 'required' ? 'required' : null ?> data-hasrequired="<?php  echo __('* Required Fields') ?>">
+        <label for="regulation" class="label"><span><?php  echo __('Linkedin') ?></span></label>
+        <div class="control">
+            <input type="text" value="<?= $block->getLinkedin(); ?>" name="linkedin" id="Linkedin" title="<?php  echo __('Linkedin') ?>" class="input-text" data-validate="{required:<?= $block->getLinkedinConfigValue()  === 'required' ? 'required' : 'false' ?>}">
+        </div>
+    </div>
+<?php endif; ?>
